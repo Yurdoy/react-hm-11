@@ -1,5 +1,4 @@
 nav ul {
-  list-style-type: none;
   padding: 0;
 }
 
@@ -8,6 +7,10 @@ nav ul li {
   margin-right: 10px;
 }
 
-.active-link {
+.active-link-home {
+  color: red;
+}
+
+.active-link-articles {
   color: red;
 }

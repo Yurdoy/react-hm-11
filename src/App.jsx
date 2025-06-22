@@ -4,7 +4,6 @@ import Home from "./components/Home";
 import Article from "./components/Article";
 import ArticleList from "./components/ArticleList";
 import "./App.css";
-import About from "./components/About";
 
 function App() {
   return (
@@ -12,23 +11,29 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "active-link-home" : "")}
+            >
+              Home
+            </NavLink>
           </li>
           <li>
             <NavLink
-              to="/about"
-              className={({ isActive }) => (isActive ? "active-link" : "")}
+              to="/articles"
+              className={({ isActive }) =>
+                isActive ? "active-link-articles" : ""
+              }
             >
-              About
+              Articles
             </NavLink>
           </li>
         </ul>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
         <Route path="/articles" element={<ArticleList />} />
-        <Route path="/article/:id" element={<Article />} />
+        <Route path="/article" element={<Article />} />
       </Routes>
     </div>
   );
